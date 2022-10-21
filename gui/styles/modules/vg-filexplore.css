@@ -1,0 +1,58 @@
+.qgroup-cont{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 10px;
+}
+.qgroup-user{
+    padding: 7px;
+}
+.file-system{
+    padding: 7px;
+}
+.file-system-actions{
+  display:flex;
+  justify-content:flex-end;
+  margin-bottom:5px;
+}
+.folder{
+    position: relative;
+}
+.folder div:hover{
+    cursor: pointer;
+}
+.folder>div:first-child{
+    min-width:100px;
+}
+.folder:before{
+    content: "\2022";
+    font-weight: bold;
+    position: absolute;
+    left: -13px;
+}
+#dbmap-cont:before{
+    content:"";
+}
+.file{
+    min-width:100px;
+}
+.file>div{
+    display: none;
+}
+.subfolder{
+    display: none;
+    margin-left: 40px;
+}
+.subfolder:before{
+    content: "\2517";
+    color: red;
+    position: absolute;
+    left: 5px;
+    top: 13px;
+}
+.fs-header{
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.qgroup-list>.fs-header{
+    margin-top: 20px;
+}

@@ -1,0 +1,37 @@
+
+.quote-form-editor{
+    display:flex;
+    flex-wrap:wrap;
+    padding: 30px;
+    background-color:var(--highlight-color);
+}
+.quote-form-editor div{
+  padding:5px;
+  height: fit-content;
+}
+.quote-form-editor input{
+    width: 150px;
+    background-color: rgb(249, 253, 229);
+}
+.edit-var{
+  display:flex;
+}
+.edit-object{
+  display:flex;
+  flex-direction:column;
+  border-left:1px solid black;
+  border-radius:20px;
+}
+
+.edit-array{
+  display:flex;
+}
+.edit-array>div:nth-child(2){
+  background-color: green;
+  height: fit-content;
+  padding: 4px;
+}
+.edit-array-list{
+  display:flex;
+  flex-direction:column;
+}

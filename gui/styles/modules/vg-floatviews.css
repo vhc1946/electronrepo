@@ -1,0 +1,37 @@
+
+.vg-float-frame{
+  display:none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  height: 100%;
+  background-color: #00000073;
+  z-index: 50;
+  padding-top:30px;
+}
+.vg-float-frame-open{
+  display:flex;
+  justify-content:center;
+}
+.vg-float-view{
+  display:none;
+}
+.vg-float-view-selected{
+  display:block;
+  background-color: var(--rm-gray);
+}
+
+#vg-float-frame-close{
+  height: 20px;
+  opacity: .1;
+}
+#vg-float-frame-close:hover{
+  opacity:1;
+  filter:invert();
+}
+
+.vg-float-view>div:first-child{
+  background-color: var(--background-base);
+  border: 2px solid black;
+}

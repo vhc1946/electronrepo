@@ -1,0 +1,31 @@
+
+.sidemenuview-cont{
+  display:flex;
+}
+.sidemenuview-menu{
+  height:fit-content;
+  background-color:var(--background-base);
+}
+.sidemenuview-menu:hover> .sidemenuview-selected{
+  font-size:10pt;
+}
+.sidemenuview-menu:hover> .sidemenuview-selected:hover{
+  font-size:15pt;
+}
+.sidemenuview-views{
+  width:100%;
+  height:100vh;
+  border-left:2px solid var(--background-dark);
+}
+.sidemenuview-menu-item{
+  width:120px;
+  text-align:center;
+  font-size:10pt;
+}
+.sidemenuview-selected{
+  background-color:var(--highlight-color);
+  font-size:15pt;
+}
+.sidemenuview-menu-item:hover{
+  font-size:15pt;
+}

@@ -1,0 +1,21 @@
+
+<div id="titlebar-cont">
+  <div id="titlebar-cont-left">
+    <img id="titlebar-moretools" class="titlebar-button-action" src="../bin/repo/assets/icons/menu-burger.png" alt="MORE" title="More">
+    <div id="titlebar-moretools-quick" style="display:none">
+      <img id="titlebar-page-print" class="titlebar-button-action" src="../bin/repo/assets/icons/print.png" alt="PRINT" title="Print">
+      <img id="titlebar-page-settings" class="titlebar-button-action" src="../bin/repo/assets/icons/settings.png" alt="SETTINGS" title="Settings">
+      <img id="titlebar-page-support" class="titlebar-button-action" src="../bin/repo/assets/icons/comment.png" alt="SUPPORT" title="Support">
+    </div>
+    <span id="titlebar-page-user-cont">
+      <img id="titlebar-page-user" class="titlebar-button-action" src="../bin/repo/assets/icons/user.png" alt="USER" title="Log-Out">
+      <span id="titlebar-username"></span>
+    </span>
+  </div>
+  <div id="titlebar-title">VOGEL APP</div>
+  <div id="titlebar-cont-right">
+    <img id="titlebar-win-mini" class="titlebar-button-view" src="../bin/repo/assets/icons/minus.png" alt="MINI" title="Minimize">
+    <img id="titlebar-win-maxi" class="titlebar-button-view" src="../bin/repo/assets/icons/square.png" alt="MAXI" title="Maximize">
+    <img id="titlebar-win-close" class="titlebar-button-view" src="../bin/repo/assets/icons/cross.png" alt="CLOSE" title="Close">
+  </div>
+</div>

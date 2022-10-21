@@ -1,0 +1,6 @@
+
+    <div id="login-info">
+        <label>User</label><input id="login-username"/>
+        <label>Password</label><input id="login-password" type="password"/>
+        <div id="login-submit" class="flat-action-button">SUBMIT</div>
+    </div>
