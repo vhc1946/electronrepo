@@ -1,11 +1,11 @@
-.tnv-nav-cont{
+#tnv-nav-cont{
   display:flex;
   justify-content:flex-end;
   border-bottom: 2px solid var(--vogel-blue);
 }
 .tnv-tab-button{
   display:flex;
-  justify-content: space-between;
+  justify-content:flex-end;
   background-color:var(--background-med);
   border-bottom:none;
   border-radius:5px 5px 0px 0px;
@@ -16,15 +16,15 @@
 }
 
 /* X button */
-.tnv-close-button{
+.tnv-tab-button>div:last-child{
   margin: 0px 3px 0px 10px;
   visibility: hidden;
 }
-.tnv-tab-button:hover>.tnv-close-button{
+.tnv-tab-button:hover>div:last-child{
   display:block;
   visibility:visible;
 }
-.tnv-close-button:hover{
+.tnv-tab-button>div:last-child:hover{
   color:var(--vogel-red);
 }
 
@@ -75,13 +75,4 @@
 /* Charts */
 #chart-area{
   width: 50%;
-}
-
-
-/* Printing */
-.tnv-print-header{
-  display:none;
-}
-@media print{
-  .tnv-print-header{display:block;}
 }

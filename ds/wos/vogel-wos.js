@@ -25,12 +25,6 @@ var awo = (w)=>{
         jobRef:w.jobRef||'',
         scRef:w.scRef||'',
         woRef:w.woRef||'',
-
-        billed:w.billed||0,
-        matCost:w.matCost||0,
-        labHours:w.labHours||0,
-        labCost:w.labCost||0,
-
         tech:w.tech||'',
         callDate:w.callDate?ExcelDateToJSDate(w.callDate,false):'',
         callTime:w.callTime||'',
@@ -43,7 +37,6 @@ var vjwomap = (vjwo = null) => {
     if (!vjwo || vjwo==undefined){
         vjwo = {}
     }
-    console.log(vjwo);
     return {
         id: String(vjwo['woNum     ']) || '',
         custCode:vjwo['custCode  ']||'',
@@ -62,17 +55,12 @@ var vjwomap = (vjwo = null) => {
         jobRef:vjwo['jobRef    ']||'',
         scRef:vjwo['scRef     ']||'',
         woRef:vjwo['woRef        ']||'',
-
-        billed:vjwo['       billed']||0,
-        matCost:vjwo['      matCost']||0,
-        labHours:vjwo['  labHours']||0,
-        labCost:vjwo['      labCost']||0,
-
         tech:String(vjwo['woTec'])||'',
         callDate:vjwo['callDate']?ExcelDateToJSDate(vjwo['callDate'],false):'',
         callTime:vjwo['callTime  ']||'',
         strtDate:vjwo['strtDate']?ExcelDateToJSDate(vjwo['strtDate'],false):'',
-        strtTime:vjwo['schedTim']||'',
+        strtTime:vjwo['strtTime']||'',
+        tech:vjwo['tech ']||'',
         woDescr:vjwo['woDescr                                                     ']||''
     }
 }
