@@ -104,5 +104,6 @@ module.exports = {
   FINDparentele,
   SETdatalistFROMarray,
   SETdatalistFROMobject,
+  SETdatalistSPC,
   GETdatalist
 }
