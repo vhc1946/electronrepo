@@ -139,6 +139,13 @@ class stdbook {
         }
     }
 
+    GETcurrentview = ()=>{
+      for(let v in this.views){
+        if($(document.getElementById(this.views[v])).is(":visible")){
+          return v;
+        }
+      }
+    }
     PRINTview = ()=>{
       window.print();
     }
