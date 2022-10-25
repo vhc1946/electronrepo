@@ -10,7 +10,7 @@ var swapper = (view,fpath,w=0,h=0)=>{
   }
 }
 //load view into a new BrowswerWindow
-var loader = (fpath,w=0 ,h=0,close=false,menubar=false,titlebar='show')=>{
+var loader = (fpath,w=0 ,h=0,close=false,menubar=false,titlebar='show',transparent=false)=>{
     let nwin = new BrowserWindow({
             webPreferences:{
                 nodeIntegration:true,
@@ -19,7 +19,8 @@ var loader = (fpath,w=0 ,h=0,close=false,menubar=false,titlebar='show')=>{
             width:w<=0?500:w,
             height:h<=0?500:h,
             autoHideMenuBar:menubar,
-            titleBarStyle: titlebar
+            titleBarStyle: titlebar,
+            transparent:transparent
         });
         if(w==0){
           nwin.maximize();

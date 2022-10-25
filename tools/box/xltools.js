@@ -2,20 +2,12 @@
 
 function ExcelDateToJSDate(date, time = false) {
     try{
-        var newdate=null;
-        if (date == undefined){return '';}
-        if (isNaN(date)){
-            try{
-                newdate = new Date(date);
-                return date;
-            }catch{
-                return '';
-            }
-        }else{
-            newdate = new Date(Math.round((date - 25569)*86400*1000));
+        if (date == undefined || isNaN(date)){
+            return '';
         }
+        var newdate = new Date(Math.round((date - 25569)*86400*1000));
         if (time){
-            return newdate.toISOString();
+            return newdate;
         }else{
             return newdate.toISOString().split('T')[0];
         }

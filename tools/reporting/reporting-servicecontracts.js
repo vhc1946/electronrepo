@@ -118,52 +118,55 @@ var LISTnewbymonth=(list,month=new Date().getMonth())=>{
 }
 
 
-var RunEOM=(list,dept=['300'],endDate=new Date())=>{
+var RunEOM=(list,dept='300',endDate=new Date())=>{
   let mlist = new ObjList(list);
-  let deplist =[];
   let tlist = [];
-  for(let x=0;x<dept.length;x++){
-    mlist.SETlist(mlist.TRIMlist({cat:dept})); //trim by department
-
-    let alist = mlist.TRIMlist({status:'A'}); //trim and save actives
-    let data = {
-      month:endDate.getMonth(),
-      expires:LISTexpired(alist,endDate), //list of expires
-      renewals:LISTrenewalsbymonth(alist,endDate.getMonth()),//list of renewals
-      cancels:LISTcancelsbymonth(mlist.TRIMlist({status:'I'}),endDate.getMonth()),//list of cancels
-      new:LISTnewbymonth(alist,endDate.getMonth()),//list of news
-      typetotals:{},
-      totals:{
-        total:alist.length,
-        expired:0,
-        renewed:0,
-        canceled:0,
-        new:0
-      }
+  mlist.SETlist(mlist.TRIMlist({cat:dept}));
+  for(let x=0;x<mlist.list.length;x++){ //trim by startdate
+    if(endDate>=new Date(mlist.list[x].startdate)){
+      tlist.push(mlist.list[x])
     }
-    data.totals.expired = data.expires.length;
-    data.totals.renewed = data.renewals.length;
-    data.totals.new = data.new.length;
-    data.totals.canceled=data.cancels.length;
+  }
+  mlist.SETlist(tlist);
+  let alist = mlist.TRIMlist({status:'A'});
 
-    data.types = LISTbytype(alist,dept);
-    let ilist = LISTbytype(mlist.TRIMlist({status:'I'}),dept);
+  let data = {
+    month:endDate.getMonth(),
 
-    for(let t in data.types){
-      data.typetotals[t] = {};
-
-      data.typetotals[t].count=data.types[t].length;
-
-      data.typetotals[t].expired=LISTexpired(data.types[t],endDate).length;
-
-      data.typetotals[t].renewed=LISTrenewalsbymonth(data.types[t],endDate.getMonth()).length;
-
-      data.typetotals[t].cancels=LISTcancelsbymonth(ilist[t],endDate.getMonth()).length;
-
-      data.typetotals[t].news=LISTnewbymonth(data.types[t],endDate.getMonth()).length;
-
+    expires:LISTexpired(alist,endDate),
+    renewals:LISTrenewalsbymonth(alist,endDate.getMonth()),
+    cancels:LISTcancelsbymonth(mlist.TRIMlist({status:'I'}),endDate.getMonth()),
+    news:LISTnewbymonth(alist,endDate.getMonth()),
+    typetotals:{},
+    totals:{
+      total:alist.length,
+      expired:0,
+      renewed:0,
+      canceled:0,
+      news:0
     }
-    deplist.push(data);
+  }
+  data.totals.expired = data.expires.length;
+  data.totals.renewed = data.renewals.length;
+  data.totals.news = data.news.length;
+  data.totals.canceled=data.cancels.length;
+
+  data.types = LISTbytype(alist,dept);
+  let ilist = LISTbytype(mlist.TRIMlist({status:'I'}),dept);
+
+  for(let t in data.types){
+    data.typetotals[t] = {};
+
+    data.typetotals[t].count=data.types[t].length;
+
+    data.typetotals[t].expired=LISTexpired(data.types[t],endDate).length;
+
+    data.typetotals[t].renewed=LISTrenewalsbymonth(data.types[t],endDate.getMonth()).length;
+
+    data.typetotals[t].cancels=LISTcancelsbymonth(ilist[t],endDate.getMonth()).length;
+
+    data.typetotals[t].news=LISTnewbymonth(data.types[t],endDate.getMonth()).length;
+
   }
   /////////////////////////////////////////////////
 
@@ -172,7 +175,7 @@ var RunEOM=(list,dept=['300'],endDate=new Date())=>{
 
 
   ////////////////////////////////////////////////
-  return deplist;
+  return data
 }
 
 

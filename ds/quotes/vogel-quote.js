@@ -1,6 +1,5 @@
 
 var {acustomer}=require('../customers/vogel-customers.js');
-
 /* Vogel Quote ////////////////////////////////////////////////////////////////////
 */
 var aquote = (q=null)=>{
@@ -18,7 +17,6 @@ var aquote = (q=null)=>{
         customer: acustomer(q.customer),
 
         status: q.status || 'O', //initialize 'O' (OPEN)
-        sold:q.sold||false, //if
 
         dept:q.dept||'',
         cat: q.cat || '',
@@ -26,12 +24,9 @@ var aquote = (q=null)=>{
         estimator:q.estimator||'',//employee code
 
         info:q.info || {}, //info for a specific type of quote,
-        bid:q.bid||{},
-        
-        froot:q.froot || null,
 
-        opendate: q.opendate || new Date().toISOString().split('T')[0],
-        lastdate: q.lastdate || new Date().toISOString().split('T')[0],
+        opendate: q.opendate || new Date().toISOString(),
+        lastdate: q.lastdate || new Date().toISOString(),
         subdate: q.subdate || null,
         apprdate: q.apprdate || null,
         closedate: q.closedate || null

@@ -8,9 +8,6 @@
         - nav - object holding all the different elements
                 required for this type of view
 */
-
-
-
 class stdbook {
     constructor(view = null,nav = null){
         /* VIEW NAV  /////////////////////////////////////
@@ -36,7 +33,9 @@ class stdbook {
     }
 
     SETnav =()=>{
-        for(let x=0;x<this.navbuts.length;x++){this.navbuts[x].addEventListener('click',this.sidenavSelect);}
+        for(let x=0;x<this.navbuts.length;x++){
+            this.navbuts[x].addEventListener('click',this.sidenavSelect);
+        }
     }
 
     /*  Side Nav Selector
@@ -78,13 +77,21 @@ class stdbook {
         }
 
         while(bcount>=0 && bcount<navbs.length){
-            if(navbs[bcount] === ele.target){found = true;}
+            if(navbs[bcount] === ele.target){
+                found = true;
+            }
             if(!LR){ // placed in front of .hide() so to skip the selected view on the right side nav
-                if(found && !tagged){tagged = true;}
+                if(found && !tagged){
+                    tagged = true;
+                }
                 bcount--;
             }
-            if(found){$(navbs[bcount]).hide();}
-            if(LR){bcount++}//placed behind .hide() to hide the selected view in the left side nav
+            if(found){
+                $(navbs[bcount]).hide();
+            }
+            if(LR){ //placed behind .hide() to hide the selected view in the left side nav
+                bcount++;
+            }
         }
 
         this.sidenavAdjust(clkSide,ele.target);
@@ -98,13 +105,21 @@ class stdbook {
         for (let vbname in this.viewbutts){
             let vbs = document.getElementsByClassName(this.viewbutts[vbname]);
             vbs[1].classList.remove(this.butsele);
-            if(vbs[0] == elem || vbs[1] ==elem){vbs[1].classList.add(this.butsele);}
+            if(vbs[0] == elem || vbs[1] ==elem){
+                vbs[1].classList.add(this.butsele);
+            }
             if(vbs[0].parentNode === cSide){
-                if($(vbs[0]).is(":visible")){$(vbs[1]).hide();}
-                else{$(vbs[1]).show();}
+                if($(vbs[0]).is(":visible")){
+                    $(vbs[1]).hide();
+                }else{
+                    $(vbs[1]).show();
+                }
             }else{
-                if($(vbs[1]).is(":visible")){$(vbs[0]).hide();}
-                else{$(vbs[0]).show();}
+                if($(vbs[1]).is(":visible")){
+                    $(vbs[0]).hide();
+                }else{
+                    $(vbs[0]).show();
+                }
             }
         }
     }
@@ -117,18 +132,13 @@ class stdbook {
                     if(viewButt.classList[x].indexOf(v) != -1){ //search for the instance of v
                         $(document.getElementById(this.views[v])).show();
                         found = true;
+                        break;
                     }
                 }
             }
         }
     }
-    GETcurrentview = ()=>{
-      for(let v in this.views){
-        if($(document.getElementById(this.views[v])).is(":visible")){
-          return v;
-        }
-      }
-    }
+
     PRINTview = ()=>{
       window.print();
     }

@@ -3,7 +3,7 @@
     background-color: var(--background-base);
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 25px);
+    height: 100vh;
 }
 
 .vg-stdbook-header{
@@ -34,14 +34,14 @@
 .vg-stdbook-pages{
     flex-grow: 1;
     display: grid;
-    grid-template-columns: 1fr 11fr 1fr;
+    grid-template-columns: 1fr 9fr 1fr;
 
 }
 .vg-stdbook-cont-views{
     padding-right: 10px;
     padding-left: 10px;
     overflow: auto;
-    height: calc(100vh - 25px);
+    height: calc(100vh - 40px); 
 
 }
  .vg-stdbook-cont-views::-webkit-scrollbar{
@@ -62,9 +62,13 @@
     background-color: var(--background-dark);
 }
 
+.vg-stdbook-cont-sidenav-button > div{
+    display: none;
+}
 .vg-stdbook-cont-sidenav-button-selected > div {
-    align-self:center;
-
+    display: inline-flex;
+    margin-top: 20px;
+    align-items:center;
 }
 .vg-stdbook-cont-sidenav-button{
     display: grid;
@@ -82,18 +86,9 @@
     color:var(--text-dark);
     cursor:pointer;
 }
-
-.vg-stdbook-button-letter{
-
-    font-size: 15pt;
-    margin: -3px 3px -6px 0px;
-    text-align: center;
-    height: fit-content;
-}
 .vg-stdbook-cont-sidenav-button-selected{
     font-size: 2em;
     border-right: 3px solid var(--background-base);
-    padding-right:5px;
 }
 
 /*Stops highlight from showing when tab is already selected */
@@ -103,26 +98,13 @@
     cursor:unset;
 }
 
-.vg-stdbook-subtab{
-    display: flex;
-    flex-grow: 1;
-    justify-content: flex-end;
-    font-size: .75em;
-}
-.vg-stdbook-subbutton{
-    height: 175px;
-    text-align: center;
-    background-color: var(--background-dark);
-}
-.vg-stdbook-subbutton:hover{
-    cursor: pointer;
-    opacity: .7;
-}
-
 @media print {
     *{
         -webkit-print-color-adjust: exact;
         forced-color-adjust: exact;
+    }
+    body{
+        font-size: .75em;
     }
     .vg-stdbook-cont-sidenav, .vg-stdbook-header, .vg-utilcont-toggle{
         display: none;
