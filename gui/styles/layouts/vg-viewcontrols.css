@@ -141,11 +141,11 @@ Must select proper classes for the menu and container. Select based on the orien
 }
 
 /* ACTION BUTTONS */
-.vc-actionbutton{
+.viewcontrol-actionbutton{
   height: 25px;
   filter:invert();
 }
-.vc-quick-actions{
+.viewcontrol-quick-actions{
   flex-grow:1;
   justify-content:flex-end;
 }
@@ -153,7 +153,7 @@ Must select proper classes for the menu and container. Select based on the orien
 
 
 /* Printing */
-.vc-print-header{
+.viewcontrol-print-header{
   margin: 5px 0px;
   display:none;
 }

@@ -44,6 +44,8 @@ var vcdom={//DOM NAMES
     cont:'viewcontrol-menu',
     button:'viewcontrol-menu-item',
     selected:'viewcontrol-menu-selected',
+    qactions:'viewcontrol-quick-actions',
+    qactionbuttons:'viewcontrol-actionbutton'
   },
   port:{
     cont:'viewcontrol-port',
@@ -150,13 +152,19 @@ var SETUPviews=(cont,type='',style=null)=>{
   }
 }
 
-var CREATEviewport=(cont,type='',actions=false,style=null)=>{
+var CREATEviewport=(cont,type='',actions=null,style=null)=>{
   cont.classList.add(vcdom.cont);
   let ele = document.createElement('div');
   ele.classList.add(vcdom.menu.cont);
+  ele.appendChild(document.createElement('div'));
+  ele.appendChild(document.createElement('div'));
+  ele.lastChild.classList.add(vcdom.menu.qactions);
+  cont.appendChild(ele);
+
+
   //add button container
   // if(actions){}
-  cont.appendChild(ele);
+
   ele=document.createElement('div');
   ele.classList.add(vcdom.port.cont);
   cont.appendChild(ele);
