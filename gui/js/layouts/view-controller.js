@@ -188,7 +188,7 @@ var ADDview=(name,view,cont,del=false,delEve=()=>{})=>{
     view.title=name;
     view.classList.add(vcdom.port.view,vcdom.port.selected);
     view.prepend(document.createElement('div'));
-    view.firstChild.classList.add('vc-print-header',vcdom.menu.button,vcdom.menu.selected);
+    view.firstChild.classList.add('viewcontrol-print-header',vcdom.menu.button,vcdom.menu.selected);
     view.firstChild.innerText = name;
     cont.getElementsByClassName(vcdom.port.cont)[0].appendChild(view);
 
