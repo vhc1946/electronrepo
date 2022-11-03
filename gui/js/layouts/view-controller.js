@@ -20,7 +20,7 @@ var SETUPmodule=(root)=>{
   for(let x=0;x<stylesheets.length;x++){
     let viewstyles = document.createElement('link');
     viewstyles.setAttribute('rel','stylesheet');
-    viewstyles.setAttribute('href','/Tech/bin/css/test.css');
+    viewstyles.setAttribute('href',ROOT+stylesheets[x]);
     document.getElementsByTagName('head')[0].prepend(viewstyles);
   }
 }
