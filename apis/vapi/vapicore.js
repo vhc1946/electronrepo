@@ -1,7 +1,7 @@
 
-export var VAPIhost = 'https://18.191.134.244:5000/'; //'https://localhost:5000/'//;
+var VAPIhost = 'https://18.191.134.244:5000/'; //'https://localhost:5000/';//
 
-export var SENDrequest = (pack,request='mart',url=VAPIhost)=>{
+var SENDrequest = (pack,request='mart',url=VAPIhost)=>{
   return new Promise((res,rej)=>{
     let options={
       method:'POST',
@@ -25,7 +25,7 @@ export var SENDrequest = (pack,request='mart',url=VAPIhost)=>{
   });
 }
 
-export var SENDrequestapi = (pack,request='mart',url=VAPIhost+'api/')=>{
+var SENDrequestapi = (pack,request='mart',url=VAPIhost+'api/')=>{
   return new Promise((res,rej)=>{
     let options={
       method:'POST',
@@ -49,7 +49,7 @@ export var SENDrequestapi = (pack,request='mart',url=VAPIhost+'api/')=>{
   });
 }
 
-export var SENDrequestadmin = (pack,request='store',url=VAPIhost+'admin/')=>{
+var SENDrequestadmin = (pack,request='store',url=VAPIhost+'admin/')=>{
   return new Promise((res,rej)=>{
     let options={
       method:'POST',
@@ -71,4 +71,11 @@ export var SENDrequestadmin = (pack,request='store',url=VAPIhost+'admin/')=>{
     .then(data=>{return res(data);})
     .catch(err=>{return res(false);})
   });
+}
+
+module.exports={
+  VAPIhost,
+  SENDrequest,
+  SENDrequestapi,
+  SENDrequestadmin
 }

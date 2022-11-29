@@ -1,4 +1,4 @@
-import { SENDrequestapi } from './vapicore.js';
+var { SENDrequestapi } require('./vapicore.js');
 
 //WO_DetailHistory_tbl
 //WO_DescOfWorkPerformed_tbl
@@ -30,7 +30,7 @@ GETjapitest().then(
   });
 //*/
 
-export var GETjapitest=()=>{
+var GETjapitest=()=>{
   return new Promise((res,rej)=>{
       var wopull = {
           table:'test',
@@ -41,7 +41,7 @@ export var GETjapitest=()=>{
   });
 }
 
-export var GETresflbook=(wonum,table='flatratebook')=>{
+var GETresflbook=(wonum,table='flatratebook')=>{
     return new Promise((res,rej)=>{
         let opts = {
             table:table,
@@ -50,7 +50,7 @@ export var GETresflbook=(wonum,table='flatratebook')=>{
         return res(SENDrequestapi(opts,'jmart'));
     })
 }
-export var GETscontract=(custcode,table='contracttable')=>{
+var GETscontract=(custcode,table='contracttable')=>{
   return new Promise((res,rej)=>{
       let wopull = {
           table:'contracttable',
@@ -59,7 +59,7 @@ export var GETscontract=(custcode,table='contracttable')=>{
       return res(SENDrequestapi(opts,'jmart'));
   })
 }
-export var GETwo=(wonum,table='wonumber')=>{
+var GETwo=(wonum,table='wonumber')=>{
     return new Promise((res,rej)=>{
         let opts = {
             table:table,
@@ -94,7 +94,7 @@ export var GETwo=(wonum,table='wonumber')=>{
         }else{return res(wo);}
     })
 }
-export var GETcustomer=(custcode,table='customertable')=>{
+var GETcustomer=(custcode,table='customertable')=>{
   return new Promise((res,rej)=>{
       let opts = {
           table:table,
@@ -103,7 +103,7 @@ export var GETcustomer=(custcode,table='customertable')=>{
       return res(SENDrequestapi(opts,'jmart'));
   })
 }
-export var GETserviceitems=(custcode,table='custserviceitems')=>{
+var GETserviceitems=(custcode,table='custserviceitems')=>{
   return new Promise((res,rej)=>{
       let opts = {
           table:table,
@@ -149,4 +149,13 @@ export var GETserviceitems=(custcode,table='custserviceitems')=>{
         }
       );
   })
+}
+
+module.exports={
+  GETjapitest,
+  GETresflbook,
+  GETscontract,
+  GETwo,
+  GETcustomer,
+  GETserviceitems
 }
