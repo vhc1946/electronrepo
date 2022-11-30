@@ -41,4 +41,4 @@ class VHCform{
   }
 }
 
-export{VHCform}
+module.exports={VHCform}
