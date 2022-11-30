@@ -1,5 +1,3 @@
-var {CREATEticket} = require('../../../logger/things/support-form.js');
-
 //  Setup Module ///////////////////////////////////////////////////////////////
 var SETUPmodule=(root)=>{
   console.log('Controller Root HAS been declared for vg-titlebar.js');
@@ -47,8 +45,7 @@ var tbdom={ //menubar
     save:'titlebar-page-save',
     print:'titlebar-page-print',
     settings:'titlebar-page-settings',
-    user:'titlebar-page-user',
-    support:'titlebar-page-support'
+    user:'titlebar-page-user'
   },
   utils:{
     buttons:{
@@ -95,10 +92,6 @@ document.getElementById(tbdom.more.cont).addEventListener('click',(ele)=>{  // T
       }else{$(moreele).show();}
 
   });
-
-document.getElementById(tbdom.page.support).addEventListener('dblclick',(ele)=>{  // Open a Support Ticket
-  CREATEticket();
-});
 
 
 /* ADD actions to title bar

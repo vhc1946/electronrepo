@@ -5,7 +5,6 @@
     <div id="titlebar-moretools-quick" style="display:none">
       <img id="titlebar-page-print" class="titlebar-button-action" src="../bin/repo/assets/icons/print.png" alt="PRINT" title="Print">
       <img id="titlebar-page-settings" class="titlebar-button-action" src="../bin/repo/assets/icons/settings.png" alt="SETTINGS" title="Settings">
-      <img id="titlebar-page-support" class="titlebar-button-action" src="../bin/repo/assets/icons/comment.png" alt="SUPPORT" title="Support">
     </div>
     <span id="titlebar-page-user-cont">
       <img id="titlebar-page-user" class="titlebar-button-action" src="../bin/repo/assets/icons/user.png" alt="USER" title="Log-Out">
