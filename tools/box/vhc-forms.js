@@ -1,16 +1,24 @@
 
 class VHCform{
-  constructor(cont){
+  constructor(cont=document.createElement('div')){
     this.cont=cont;
-    this.inputs={}
+    this.inputs={};
+    this.actions={};
   }
 
   set form(input={}){
     for(let i in this.inputs){
       try{
         switch(this.inputs[i].tagName){
-          case 'INPUT' || 'TEXTAREA':{this.inputs[i].value=input[i]?input[i]:'';break;}
-          default:{this.inputs[i].innerText = input[i]?input[i]:'';}
+          case 'INPUT':{
+            switch(this.inputs[i].type){
+              case 'checkbox':{this.inputs[i].checked=input[i]?input[i]:false;break}
+              default:{this.inputs[i].value=input[i]?input[i]:'';}
+            }
+            break;
+          }
+          case 'SELECT':{this.inputs[i].value=input[i]?input[i]:'';break;}
+          default:{console.log(this.inputs[i].tagName);this.inputs[i].innerText = input[i]?input[i]:'';}
         }
       }catch{console.log(`${i} is not setup in the form`)}
     }
@@ -20,7 +28,14 @@ class VHCform{
     for(let i in this.inputs){
       try{
         switch(this.inputs[i].tagName){
-          case 'INPUT' || 'TEXTAREA':{fi[i]=this.inputs[i].value;break;}
+          case 'INPUT':{
+            switch(this.inputs[i].type){
+              case 'checkbox':{fi[i]=this.inputs[i].checked;break;}
+              default:{fi[i]=this.inputs[i].value;}
+            }
+            break;
+          }
+          case 'SELECT':{fi[i]=this.inputs[i].value;break;}
           case 'DIV':{fi[i]=this.inputs[i].innerText;break;}
           default:{console.log(`${i} failed to get from form`);}
         }
