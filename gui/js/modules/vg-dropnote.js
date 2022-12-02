@@ -1,3 +1,25 @@
+//  Setup Module ///////////////////////////////////////////////////////////////
+var SETUPmodule=(root)=>{
+  console.log('Controller Root HAS been declared for vg-dropnote.js')
+  ROOT=root;
+  for(let x=0;x<stylesheets.length;x++){
+    let viewstyles = document.createElement('link');
+    viewstyles.setAttribute('rel','stylesheet');
+    viewstyles.setAttribute('href',ROOT+stylesheets[x]);
+    document.getElementsByTagName('head')[0].prepend(viewstyles);
+  }
+}
+
+//  PATHS //
+var stylesheets = ['gui/styles/modules/vg-dropnote.css'];
+var assets={
+}
+
+// REPO ROOT //
+var ROOT=null;
+try{
+  SETUPmodule(RROOT);
+}catch{console.log('Repo root is not declared')}
 
 
 var notedom = {
