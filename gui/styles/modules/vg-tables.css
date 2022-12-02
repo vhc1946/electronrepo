@@ -43,9 +43,6 @@
     top: 0;
     background-color: lightgrey;
 }
-<<<<<<< HEAD
-=======
-
 /* Table Styles*/
 .vg-gentable>table{
     border-collapse: collapse;
@@ -71,4 +68,3 @@
     cursor: pointer;
     background-color: var(--hover-highlight);
 }
->>>>>>> 91490a06e46af81ac2dd8cbb3b406a53484e5c7f
