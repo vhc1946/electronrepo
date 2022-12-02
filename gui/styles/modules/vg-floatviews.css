@@ -23,8 +23,12 @@
 }
 
 #vg-float-frame-close{
-  height: 20px;
-  opacity: .1;
+  height: 15px;
+  opacity: .25;
+  position: relative;
+  left:-25px;
+  top:5px;
+
 }
 #vg-float-frame-close:hover{
   opacity:1;

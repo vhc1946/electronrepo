@@ -25,8 +25,8 @@ var aquote = (q=null)=>{
 
         info:q.info || {}, //info for a specific type of quote,
 
-        opendate: q.opendate || new Date().toISOString(),
-        lastdate: q.lastdate || new Date().toISOString(),
+        opendate: q.opendate || new Date().toISOString().split('T')[0],
+        lastdate: q.lastdate || new Date().toISOString().split('T')[0],
         subdate: q.subdate || null,
         apprdate: q.apprdate || null,
         closedate: q.closedate || null

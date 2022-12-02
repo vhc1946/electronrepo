@@ -50,19 +50,21 @@ class ObjList{
             for(let f in flts){ //need to make sure ALL flts are honored
               fcheck[f] = false; //create property to track checks
               if(this.list[x][f]!=undefined){
-                if(Array.isArray(flts[f])){ //loop through the array
-                  for(let y=0;y<flts[f].length;y++){
-                    flts[f][y] = new String(flts[f][y]).toUpperCase();
-                    if(String(this.list[x][f]).toUpperCase() == flts[f][y] || String(this.list[x][f]).toUpperCase().contains(flts[f][y])){
-                        fcheck[f] = true;
-                        break;
+                if(flts[f]!=undefined){
+                  if(Array.isArray(flts[f])){ //loop through the array
+                    for(let y=0;y<flts[f].length;y++){
+                      flts[f][y] = new String(flts[f][y]).toUpperCase();
+                      if(String(this.list[x][f]).toUpperCase() == flts[f][y] || String(this.list[x][f]).toUpperCase().contains(flts[f][y])){
+                          fcheck[f] = true;
+                          break;
+                      }
                     }
+                  }else{
+                    if(String(this.list[x][f]).toUpperCase()==String(flts[f]).toUpperCase() || (soft && String(this.list[x][f]).toUpperCase().includes(String(flts[f]).toUpperCase()))){
+                      fcheck[f]=true;
+                    }else if(flts[f]==''){fcheck[f]=true;}
                   }
-                }else{
-                  if(String(this.list[x][f]).toUpperCase()==String(flts[f]).toUpperCase() || (soft && String(this.list[x][f]).toUpperCase().includes(String(flts[f].toUpperCase())))){
-                    fcheck[f]=true;
-                  }else if(flts[f]==''){fcheck[f]=true;}
-                }
+                }else{fcheck[f]=true;}
               }
             }
             for(let fc in fcheck){
