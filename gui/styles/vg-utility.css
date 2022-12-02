@@ -36,6 +36,13 @@
 }
 .sm-action-button{
   width: 40px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.sm-action-button>img{
+  filter: invert();
+  width: 90%;
 }
 .icon-action-button{
   height: 100%;
