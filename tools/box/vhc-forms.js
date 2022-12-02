@@ -1,7 +1,7 @@
 
 class VHCform{
-  constructor(cont=document.createElement('div')){
-    this.cont=cont;
+  constructor(cont){
+    this.cont=cont?cont:document.createELement('div');
     this.inputs={};
     this.actions={};
   }
