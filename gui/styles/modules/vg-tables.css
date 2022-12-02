@@ -13,13 +13,20 @@
     border-bottom: 1px solid var(--background-dark);
 }
 
-.vg-gentable>div div, .vg-gentable>div input{
+.vg-gentable>div div,
+.vg-gentable>div input{
   flex-grow:0;
   flex-shrink:0;
   width:150px;
 }
-.vg-gentable>div:nth-child(even){
+
+.vg-gentable>div:nth-child(even),
+.vg-gentable>table>tr:nth-child(even){
     background-color: var(--background-light);
+}
+.vg-gentable>div>div:first-child,  /* Hides ID column */
+.vg-gentable>table>tr>td:first-child{
+    display:none;
 }
 .vg-gentable>div:hover{
     background-color: var(--highlight-color);
@@ -34,3 +41,32 @@
     top: 0;
     background-color: lightgrey;
 }
+<<<<<<< HEAD
+=======
+
+/* Table Styles*/
+.vg-gentable>table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.vg-gentable>table>tr>td{
+    flex-grow: 1;
+    min-width: 100px;
+}
+
+/* OLD STYLES - from other 'vg-tables.css' */
+.list-row{
+    display:flex;
+}
+.list-row>div{
+    overflow: hidden;
+    flex-basis: 100px;
+}
+.list-row:nth-child(even){
+    background-color: var(--background-med);
+}
+.list-row:hover{
+    cursor: pointer;
+    background-color: var(--hover-highlight);
+}
+>>>>>>> 91490a06e46af81ac2dd8cbb3b406a53484e5c7f

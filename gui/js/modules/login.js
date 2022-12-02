@@ -24,7 +24,7 @@ var loginls={//login local storage
 try{ //attempt to setup for client, skip if error
   $(document.getElementById('titlebar-page-user')).hide();
   
-  var {DropNote} = require ('./vg-poppers.js');
+  var {DropNote} = require ('./vg-dropnote.js');
   const {ipcRenderer} = require('electron');
 
   var SETUPmodule=(root)=>{

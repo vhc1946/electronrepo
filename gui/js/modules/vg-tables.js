@@ -55,7 +55,17 @@ var BUILDdistable=(list,cont,header=false,rowclass=false,map=(obj)=>{return obj}
     });
   }
 }
-
+var BUILDtruetable=(list,cont,header=false,rowclass=false,map=(obj)=>{return obj})=>{
+  cont.innerHTML='';
+  console.log(list);
+  let table = cont.appendChild(document.createElement('table'));
+  table.appendChild(SETtablerowFROMobject(map(list[0]),false));
+  if(header){table.lastChild.classList.add(rowclass,'vg-gentable-header')}
+  for(let x=1;x<list.length;x++){
+    table.appendChild(SETtablerowFROMobject(map(list[x]),false));
+    if(rowclass){table.lastChild.classList.add(rowclass)}
+  }
+}
 var READintable=(cont)=>{
   let list=[];
   list.push(GETrowTOobject(cont[0],false));
@@ -89,6 +99,22 @@ var SETrowFROMobject=(obj,inn=false)=>{
   return row;
 }
 
+var SETtablerowFROMobject=(obj)=>{
+  let row = document.createElement('tr');
+  for(let o in obj){
+    if(o!=''){
+      row.appendChild(document.createElement('td'));
+      row.lastChild.innerText = obj[o];
+    }
+    row.lastChild.title = o;
+  }
+  return row;
+}
+
+
+
+
+
 /* GENERIC row reader
     takes a row with <div> as children
     uses the 'title' attribute as object.property name
@@ -111,6 +137,7 @@ module.exports={
   gtdom,
   BUILDintable,
   BUILDdistable,
+  BUILDtruetable,
 
   READintable,
   FINDrowindex,
