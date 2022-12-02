@@ -28,11 +28,13 @@
 .vg-gentable>table>tr>td:first-child{
     display:none;
 }
-.vg-gentable>div:hover{
+.vg-gentable>div:hover,
+.vg-gentable>table>tr:hover{
     background-color: var(--highlight-color);
     cursor: pointer;
 }
-.vg-gentable>.vg-gentable-header:hover{
+.vg-gentable>.vg-gentable-header:hover,   /* Stops header from highlighting */
+.vg-gentable>table>.vg-gentable-header:hover{
     background-color: lightgrey;
     cursor:default;
 }
