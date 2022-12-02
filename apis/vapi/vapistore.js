@@ -3,7 +3,7 @@ var request = require('request');
 var SENDrequest = (url,app,pack)=>{
   return new Promise((res,rej)=>{
     var options={
-      url:url+`app`,
+      url:url+`api`,
       method:'GET',
       headers:{
         'Accept':'application/json',
@@ -16,7 +16,7 @@ var SENDrequest = (url,app,pack)=>{
           user:'VOGCH',
           pswrd:'vogel321'
         },
-        pack:pack
+        pack:pack //{query:{}}
       })
     }
     request(options,(err,resp,body)=>{
