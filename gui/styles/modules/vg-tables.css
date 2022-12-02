@@ -13,23 +13,28 @@
     border-bottom: 1px solid var(--background-dark);
 }
 
-.vg-gentable>div div, .vg-gentable>div input{
+.vg-gentable>div div,
+.vg-gentable>div input{
   flex-grow:0;
   flex-shrink:0;
   width:150px;
 }
 
-.vg-gentable>div:nth-child(even){
+.vg-gentable>div:nth-child(even),
+.vg-gentable>table>tr:nth-child(even){
     background-color: var(--background-light);
 }
-.vg-gentable>div>div:first-child{
-  display:none;
+.vg-gentable>div>div:first-child,  /* Hides ID column */
+.vg-gentable>table>tr>td:first-child{
+    display:none;
 }
-.vg-gentable>div:hover{
+.vg-gentable>div:hover,
+.vg-gentable>table>tr:hover{
     background-color: var(--highlight-color);
     cursor: pointer;
 }
-.vg-gentable>.vg-gentable-header:hover{
+.vg-gentable>.vg-gentable-header:hover,   /* Stops header from highlighting */
+.vg-gentable>table>.vg-gentable-header:hover{
     background-color: lightgrey;
     cursor:default;
 }
@@ -37,4 +42,29 @@
     position: sticky;
     top: 0;
     background-color: lightgrey;
+}
+/* Table Styles*/
+.vg-gentable>table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.vg-gentable>table>tr>td{
+    flex-grow: 1;
+    min-width: 100px;
+}
+
+/* OLD STYLES - from other 'vg-tables.css' */
+.list-row{
+    display:flex;
+}
+.list-row>div{
+    overflow: hidden;
+    flex-basis: 100px;
+}
+.list-row:nth-child(even){
+    background-color: var(--background-med);
+}
+.list-row:hover{
+    cursor: pointer;
+    background-color: var(--hover-highlight);
 }

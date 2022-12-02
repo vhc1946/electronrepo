@@ -26,13 +26,14 @@
   height: 15px;
   opacity: .25;
   position: relative;
-  left:-25px;
+  left:-20px;
   top:5px;
 
 }
 #vg-float-frame-close:hover{
   opacity:1;
   filter:invert();
+  cursor: pointer;
 }
 
 .vg-float-view>div:first-child{
