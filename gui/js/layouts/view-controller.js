@@ -179,11 +179,21 @@ class ViewGroup{
     this.port=this.group.getElementsByClassName(vcdom.port.cont)[0];
     this.menu=this.group.getElementsByClassName(vcdom.menu.cont)[0];
     this.buttons=this.menu.children[0]; //to get navigation menu
+
     this.swtchEve=swtchEve;
     this.delEve=delEve;
 
     if(vcgroup[type]!=undefined){this.SETUPviewgroup(type);}
 
+    for(let x=0;x<this.buttons.children.length;x++){
+      this.buttons.children[x].addEventListener('click',(ele)=>{
+        if(ele.target.classList.contains(vcdom.menu.button)){
+          this.SWITCHview(this.FINDview(this.buttons.children[x].title),ele.target);
+        }
+      });
+    }
+    try{$(this.buttons.children[0]).click();}
+    catch{}
     if(create){this.ADDqactions(qactions);}
   }
 
