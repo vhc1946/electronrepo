@@ -14,10 +14,10 @@ var CREATEcontract=(quote,sysnum,pnum,optnum,newgrp)=>{
     system:{
       name:quote.info.build.systems[sysnum].name,
       tier:quote.info.build.systems[sysnum].tiers[optnum].name,
-      btuheating:quote.info.build.systems[sysnum].tiers[optnum].btuheating,
-      btucooling:quote.info.build.systems[sysnum].tiers[optnum].btucooling,
-      outlocation:quote.info.build.systems[sysnum].tiers[optnum].outlocation,
-      inlocation:quote.info.build.systems[sysnum].tiers[optnum].inlocation,
+      btuheating:quote.info.build.systems[sysnum].btuheating,
+      btucooling:quote.info.build.systems[sysnum].btucooling,
+      outlocation:quote.info.build.systems[sysnum].outlocation,
+      inlocation:quote.info.build.systems[sysnum].inlocation,
     },
     customer:{
       name:quote.customer.name,
@@ -162,11 +162,13 @@ var CLEANspire=(system,group)=>{  //Will get more intense!
 var CLEANadditions=(optnum,additions)=>{
   let adds=[];
   for(let a=0;a<additions.length;a++){
-    adds.push({
-      name:additions[a].name,
-      notes:additions[a].notes,
-      qty:additions[a].tiers[optnum]
-    });
+    if(additions[a].tiers[optnum]>0){
+      adds.push({
+        name:additions[a].name,
+        notes:additions[a].notes,
+        qty:additions[a].tiers[optnum]
+      });
+    }
   }
   return adds;
 }
@@ -296,8 +298,8 @@ var WRITEexcel=(contract,contractpath,saveAS=false)=>{
     datasheet.cell("K28").value(contract.system.name);
     datasheet.cell("K29").value(contract.system.btuheating);
     datasheet.cell("K30").value(contract.system.btucooling);
-    datasheet.cell("AO28").value(contract.system.outlocation);
-    datasheet.cell("AO29").value(contract.system.inlocation);
+    datasheet.cell("AQ28").value(contract.system.outlocation);
+    datasheet.cell("AQ29").value(contract.system.inlocation);
 
     /* Financials */
     datasheet.cell('AS11').value(contract.finance.instntdscnt);
@@ -335,8 +337,7 @@ var WRITEexcel=(contract,contractpath,saveAS=false)=>{
     }
     for(let e=0;e<contract.enhancements.length;e++){   //Enhancements loop
       datasheet.row(e+32).cell(4).value(contract.enhancements[e].name);
-      //datasheet.row(e+32).cell(11).value(contract.enhancements[e].notes);
-      datasheet.row(e+32).cell(30).value(contract.enhancements[e].qty);
+      datasheet.row(e+32).cell(23).value(contract.enhancements[e].qty);
     }
 
     if(contract.additions.length>0){   //Checks to see if there are additions before looping through to add to sheet
