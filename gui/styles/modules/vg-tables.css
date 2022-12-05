@@ -48,9 +48,13 @@
     border-collapse: collapse;
     width: 100%;
 }
+.vg-gentable>table>tr{
+    padding: 5px;
+}
 .vg-gentable>table>tr>td{
     flex-grow: 1;
     min-width: 100px;
+    padding: 3px;
 }
 
 /* OLD STYLES - from other 'vg-tables.css' */
