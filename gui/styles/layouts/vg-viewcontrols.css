@@ -143,7 +143,6 @@ Must select proper classes for the menu and container. Select based on the orien
 /* ACTION BUTTONS */
 .viewcontrol-actionbutton{
   height: 25px;
-  filter:invert();
 }
 .viewcontrol-quick-actions{
   flex-grow:1;
