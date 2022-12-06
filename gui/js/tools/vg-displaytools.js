@@ -3,6 +3,23 @@
 */
 
 
+var SWAPdivorin=(ele,dtoin=true)=>{
+  if(ele){
+    if(dtoin){//ele is div
+      let val = ele.innerText;
+      ele.innerText = '';
+      ele.appendChild(document.createElement('INPUT'));
+      ele.children[0].value = val;
+    }
+    else{
+      let val = ele.children[0].value;
+      console.log(ele.innerHTML)
+      ele.innerHTML = '';
+      ele.innerText = val;
+    }
+  }
+}
+
 /* FIND parentNode
     Usually used in events to ensure the event belongs to the corrent element
 */
@@ -102,6 +119,7 @@ var GETdatalist = (dlistname)=>{
 
 module.exports = {
   FINDparentele,
+  SWAPdivorin,
   SETdatalistFROMarray,
   SETdatalistFROMobject,
   SETdatalistSPC,
