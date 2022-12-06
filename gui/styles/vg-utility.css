@@ -21,7 +21,6 @@
 
 /*/// BUTTONS ////////////////////////////////////////////////////////////////*/
 [class*="-action-button"]{
-  padding: 3px;
   background-color: var(--BEE-blue);
   color: var(--text-light);
   margin-right: 1px;
@@ -32,22 +31,22 @@
   cursor:pointer;
 }
 .flat-action-button{
+  padding: 3px;
   width: 80px;
 }
 .sm-action-button{
+  padding: 3px;
   width: 40px;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-.sm-action-button>img{
-  filter: invert();
-  width: 90%;
 }
 .icon-action-button{
-  height: 100%;
-  display: flex;
-  align-items: center;
+  width: 30px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+}
+.icon-action-button>img{
+  filter: invert();
+  width: 90%;
 }
 #user-apps-button:hover{
   opacity: .4;

@@ -242,10 +242,12 @@ class ViewGroup{
   ADDqactions(qacts){
     //try{
       for(let aq in qacts){
-        let button=document.createElement('img');
+        let button=document.createElement('div');
+        let image=document.createElement('img');
         button.id = qacts[aq].id;
-        button.src = qacts[aq].src;
-        button.classList.add(vcdom.menu.qactionbuttons);
+        image.src = qacts[aq].src;
+        button.classList.add(vcdom.menu.qactionbuttons, 'icon-action-button');
+        button.appendChild(image);
         this.menu.children[1].appendChild(button);
       }
     //}catch{console.log('Could not add quick actions')}
