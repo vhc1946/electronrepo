@@ -7,6 +7,7 @@ var aquote = (q=null)=>{
     return {
         id: q.id || '', //has to be unique
         name: q.name || '', //does not have to be unique
+        custid:q.custid || '',
 
         street: q.street || '',
         unit: q.unit || '',
@@ -17,6 +18,7 @@ var aquote = (q=null)=>{
         customer: acustomer(q.customer),
 
         status: q.status || 'O', //initialize 'O' (OPEN)
+        sold: q.sold || false,
 
         dept:q.dept||'',
         cat: q.cat || '',
