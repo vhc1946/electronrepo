@@ -18,6 +18,7 @@ var aquote = (q=null)=>{
         customer: acustomer(q.customer),
 
         status: q.status || 'O', //initialize 'O' (OPEN)
+        progress:q.progress||'',
         sold: q.sold || false,
 
         dept:q.dept||'',
