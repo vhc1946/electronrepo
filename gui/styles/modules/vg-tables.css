@@ -24,6 +24,10 @@
 .vg-gentable>table>tr:nth-child(even){
     background-color: var(--background-light);
 }
+.vg-gentable>div:nth-child(odd),
+.vg-gentable>table>tr:nth-child(odd){
+    background-color: var(--background-base);
+}
 .vg-gentable>div:hover,
 .vg-gentable>table>tr:hover{
     background-color: var(--highlight-color);
@@ -37,7 +41,7 @@
 .vg-gentable-header{
     position: sticky;
     top: 0;
-    background-color: lightgrey;
+    background-color: lightgrey !important;
 }
 /* Table Styles*/
 .vg-gentable>table{

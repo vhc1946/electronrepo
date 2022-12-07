@@ -44,3 +44,14 @@ body:hover{
 div::selection{
   background: transparent;
 }
+#back-splash{
+  position: fixed;
+  opacity: .25;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  filter: grayscale();
+  max-width: 90%;
+  max-height: 90%;
+  z-index:-1;
+}
