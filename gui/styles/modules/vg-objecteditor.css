@@ -16,20 +16,40 @@
 .edit-var{
   display:flex;
 }
+.edit-var>div:first-child{
+  min-width: 125px;
+}
 .edit-object{
   display:flex;
   flex-direction:column;
+  padding-left:3px;
   border-left:1px solid black;
-  border-radius:20px;
+  border-radius:10px;
+}
+.edit-array>div:first-child:hover,
+.edit-object>div:first-child:hover{
+  cursor: pointer;
+}
+.edit-array>div:nth-child(3),
+.edit-object>div:nth-child(2){
+  display: none;
 }
 
 .edit-array{
   display:flex;
 }
+.edit-array>div:first-child{
+  min-width: 75px;
+}
 .edit-array>div:nth-child(2){
-  background-color: green;
+  background-color: var(--BEE-blue);
+  color: white;
   height: fit-content;
   padding: 4px;
+  margin-right: 10px;
+}
+.edit-array>div:nth-child(2):hover{
+  cursor:pointer;
 }
 .edit-array-list{
   display:flex;

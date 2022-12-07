@@ -28,4 +28,8 @@
 }
 .sidemenuview-menu-item:hover{
   font-size:15pt;
+  cursor: pointer;
+}
+.sidemenuview-view{
+  padding: 5px;
 }

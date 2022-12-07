@@ -22,7 +22,7 @@ Must select proper classes for the menu and container. Select based on the orien
 .viewcontrol-cont{
   display:flex;
   flex-direction:column;
-  /*height: 100vh;*/
+  height: calc(100% - 36px);
   width: 100%;
 }
 .viewcontrol-menu{
@@ -141,13 +141,11 @@ Must select proper classes for the menu and container. Select based on the orien
 }
 
 /* ACTION BUTTONS */
-.viewcontrol-actionbutton{
-  height: 25px;
-}
 .viewcontrol-quick-actions{
   flex-grow:1;
   justify-content:flex-end;
 }
+
 
 
 
