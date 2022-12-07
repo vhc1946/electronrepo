@@ -32,13 +32,13 @@ var CREATEcontract=(quote,sysnum,pnum,optnum,newgrp)=>{
     equipment:null,
 
     finance:{
-      ameren:newgrp=='SYS'?quote.info.build.systems[sysnum].tiers[optnum].size.rebateelec:0,
-      manf:newgrp=='SYS'?quote.info.build.systems[sysnum].tiers[optnum].info.discmfg:0,
-      net:quote.info.pricing.systems[sysnum].tiers[optnum].priceops[pnum].opts[newgrp.toLowerCase()+"price"].price,
+      ameren:Number(newgrp=='SYS'?quote.info.build.systems[sysnum].tiers[optnum].size.rebateelec:0),
+      manf:Number(newgrp=='SYS'?quote.info.build.systems[sysnum].tiers[optnum].info.discmfg:0),
+      net:Number(quote.info.pricing.systems[sysnum].tiers[optnum].priceops[pnum].opts[newgrp.toLowerCase()+"price"].price),
       spire:null,
-      instntdscnt:newgrp=='SYS'?quote.info.build.systems[sysnum].tiers[optnum].info.discinstnt:quote.info.build.systems[sysnum].tiers[optnum].info.discinstnt/2,
-      spcldscnt:quote.info.build.systems[sysnum].tiers[optnum].info.discspcl,
-      creditfedtax:newgrp=='SYS'?quote.info.build.systems[sysnum].tiers[optnum].size.creditfedtax:0
+      instntdscnt:Number(newgrp=='SYS'?quote.info.build.systems[sysnum].tiers[optnum].info.discinstnt:quote.info.build.systems[sysnum].tiers[optnum].info.discinstnt/2),
+      spcldscnt:Number(quote.info.build.systems[sysnum].tiers[optnum].info.discspcl),
+      creditfedtax:Number(newgrp=='SYS'?quote.info.build.systems[sysnum].tiers[optnum].size.creditfedtax:0)
     },
 
     ratings:null,
@@ -47,7 +47,7 @@ var CREATEcontract=(quote,sysnum,pnum,optnum,newgrp)=>{
     enhancements:CLEANenhances(optnum,quote.info.build.systems[sysnum].enhancments),
   }
   contract.equipment = SETequipment(quote.info.build.systems[sysnum].tiers[optnum],newgrp,contract.group,quote.info.key.groups[quote.info.build.systems[sysnum].group].optheads);
-  contract.finance.spire = CLEANspire(quote.info.build.systems[sysnum].tiers[optnum],contract.group);
+  contract.finance.spire = Number(CLEANspire(quote.info.build.systems[sysnum].tiers[optnum],contract.group));
   contract.ratings = SETratings(quote.info.build.systems[sysnum].tiers[optnum],contract.group,newgrp);
   return contract;
 }
@@ -276,7 +276,7 @@ var PARSEexcel=(contract)=>{
 }
 
 var WRITEexcel=(contract,contractpath,saveAS=false)=>{
-  console.log(contract);
+  console.log('Contract> ',contract);
   return new Promise((resolve,reject)=>{
     XlsxPop.fromFileAsync(contractpath).then(workbook => {
     var datasheet = workbook.sheet("PDaA");
