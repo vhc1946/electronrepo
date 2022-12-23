@@ -74,7 +74,7 @@
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: max-content 1fr 1fr;
-
+    
     writing-mode:vertical-rl;
     padding:2px;
     padding-top: 5px;

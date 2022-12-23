@@ -27,11 +27,17 @@ Must select proper classes for the menu and container. Select based on the orien
 }
 .viewcontrol-menu{
   display:flex;
+  flex-grow: 1;
+}
+.viewcontrol-menubox{
+  flex-grow: 1;
+}
+.viewcontrol-quick-actions{
+  flex-shrink: 1;
+  justify-content:flex-end;
 }
 .viewcontrol-menu>div{
   display: flex;
-  /*background-color: lightgrey;*/
-  flex-grow:1;
 }
 .viewcontrol-menu-item{
   flex-grow:1;
@@ -139,15 +145,6 @@ Must select proper classes for the menu and container. Select based on the orien
 .viewcontrol-port-close:hover{
   filter: none;
 }
-
-/* ACTION BUTTONS */
-.viewcontrol-quick-actions{
-  flex-grow:1;
-  justify-content:flex-end;
-}
-
-
-
 
 /* Printing */
 .viewcontrol-print-header{

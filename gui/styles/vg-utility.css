@@ -16,6 +16,29 @@
   font-weight:bold;
   top:-10px;
 }
+
+[class*="vg-togglebox-"]{
+  border: 1px solid black;
+  display: flex;
+  height: 100%;
+  align-self: center;
+  background-position: center;
+  background-size: cover;
+}
+[class*="vg-togglebox-"]>div{
+  width: 25px;
+  height: 100%;
+}
+.vg-togglebox-center{
+  background-image: url('../../assets/icons/ToggleBox_C.png');
+}
+.vg-togglebox-left{
+  background-image: url('../../assets/icons/ToggleBox_L.png');
+}
+.vg-togglebox-right{
+  background-image: url('../../assets/icons/ToggleBox_R.png');
+}
+
 /*////////////////////////////////////////////////////////////////////////////*/
 
 
