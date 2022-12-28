@@ -19,6 +19,7 @@
 
 [class*="vg-togglebox-"]{
   border: 1px solid black;
+  border-radius: 3px;
   display: flex;
   height: 100%;
   align-self: center;
@@ -52,6 +53,9 @@
 [class*="-action-button"]:hover{
   opacity: .4;
   cursor:pointer;
+}
+.full-action-button{
+  padding: 3px;
 }
 .flat-action-button{
   padding: 3px;
