@@ -19,36 +19,34 @@
 
 [class*="vg-togglebox-"]{
   border: 1px solid black;
-  border-radius: 3px;
+  border-radius: 10px;
   display: flex;
-  width:77px;
+  width:65px;
   height: 100%;
   align-self: center;
   background-position: center;
   background-size: cover;
 }
 [class*="vg-togglebox-"]>div{
-  width: 35px;
+  width: 20px;
   height: 100%;
+  border-radius: 10px;
 }
 .vg-togglebox-center{
   justify-content: center;
 }
 .vg-togglebox-center>div{
   background-color:rgb(214 217 222);
-  /*background-image: url('../../assets/icons/ToggleBox_C.png');*/
 }
 .vg-togglebox-left>div{
   align-self:flex-start;
   background-color:rgb(226 18 18);
-  /*background-image: url('../../assets/icons/ToggleBox_L.png');*/
 }
 .vg-togglebox-right{
   justify-content: flex-end;
 }
 .vg-togglebox-right>div{
   background-color:rgb(181 227 202);
-  /*background-image: url('../../assets/icons/ToggleBox_R.png');*/
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
