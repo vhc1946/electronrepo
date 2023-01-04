@@ -120,18 +120,31 @@ var GETdatalist = (dlistname)=>{
 /* Fill <select> ///////////////////////////////////////////////////////
     fills the <select> tag with options from provided list
     options[{text: text, value: value}]
-    NOTE: Should this be somewhere else? Would be used throughout programs to fill selects via JS
+    //Optional\\
+    emptyoption: specify whether a placeholder blank option will be provided as the default
+    emptytext: specify the text, if any, given to the blank option
 */
-var FILLselect = (select, options)=>{
+var FILLselect = (select, options, emptyoption = false, emptytext = "")=>{
     try{
+        //Clear select
+        select.innerHTML = '';
+        //Check for whether adding an empty default option first
+        if (emptyoption) {
+            var emptyopt = document.createElement('option')
+            emptyopt.value = "";
+            emptyopt.text = emptytext;
+            select.add(emptyopt);
+        }
         for (let i = 0; i < options.length; i++) {
             var optionel = document.createElement('option');
+            console.log(options[i])
             optionel.text = options[i].text;
             optionel.value = options[i].value;
             select.add(optionel);
         }
     }
     catch(e){
+        console.log(e)
         return (e, false);
     }
 }
