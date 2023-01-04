@@ -117,11 +117,33 @@ var GETdatalist = (dlistname)=>{
 }
 /////////////////////////////////////////////////////////////////////////
 
+/* Fill <select> ///////////////////////////////////////////////////////
+    fills the <select> tag with options from provided list
+    options[{text: text, value: value}]
+    NOTE: Should this be somewhere else? Would be used throughout programs to fill selects via JS
+*/
+var FILLselect = (select, options)=>{
+    try{
+        for (let i = 0; i < options.length; i++) {
+            var optionel = document.createElement('option');
+            console.log(options[i])
+            optionel.text = options[i].text;
+            optionel.value = options[i].value;
+            select.add(optionel);
+        }
+    }
+    catch(e){
+        return (e, false);
+    }
+}
+/////////////////////////////////////////////////////////////////////////
+
 module.exports = {
   FINDparentele,
   SWAPdivorin,
   SETdatalistFROMarray,
   SETdatalistFROMobject,
   SETdatalistSPC,
-  GETdatalist
+  GETdatalist,
+  FILLselect
 }
