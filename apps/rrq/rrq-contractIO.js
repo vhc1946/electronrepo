@@ -3,6 +3,7 @@ var XlsxPop = require('xlsx-populate'); //https://github.com/dtjohnson/xlsx-popu
 var {ExcelDateToJSDate} = require('../../tools/box/xltools.js');
 
 var CREATEcontract=(quote,sysnum,pnum,optnum,newgrp)=>{
+console.log(quote);
   let contract = {
     jobnum:'',
     jobname:quote.name,
@@ -33,7 +34,7 @@ var CREATEcontract=(quote,sysnum,pnum,optnum,newgrp)=>{
 
     finance:{
       ameren:Number(newgrp=='SYS'?quote.info.build.systems[sysnum].tiers[optnum].size.rebateelec:0),
-      manf:Number(newgrp=='SYS'?quote.info.build.systems[sysnum].tiers[optnum].info.discmfg:0),
+      manf:Number(newgrp=='SYS'?quote.info.pricing.systems[sysnum].tiers[optnum].priceops[pnum].payment.manrebate:0),
       net:Number(quote.info.pricing.systems[sysnum].tiers[optnum].priceops[pnum].opts[newgrp.toLowerCase()+"price"].price),
       spire:null,
       instntdscnt:Number(newgrp=='SYS'?quote.info.build.systems[sysnum].tiers[optnum].info.discinstnt:quote.info.build.systems[sysnum].tiers[optnum].info.discinstnt/2),
