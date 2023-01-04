@@ -26,8 +26,7 @@ class FormList{
     seleeve=()=>{}
   }){
     this.cont=cont;
-    console.log(this.name);
-    
+
     if(this.INITcontent()){this.cont.innerHTML=this.INITcontent();}
     this.content=this.cont.innerHTML;
 
@@ -36,13 +35,16 @@ class FormList{
     this.sleeve = seleeve;//select event
 
     if(!this.cont.classList.contains(this.dom.cont)){this.cont.classList.add(this.dom.cont)}
+
     let ccount=[];
-    /*
     for(let p in this.dom.parts){//ensure parts
       let set = false;
       let x=0;
       for(x;x<this.cont.children.length;x++){
-        if(this.cont.children[x].classList.contains(this.dom.parts[p])){set=true;break;}
+        if(this.cont.children[x].classList.contains(this.dom.parts[p])){
+          set=true;
+          break;
+        }
       }
       if(!set){
         this[p]=document.createElement('div');
@@ -52,7 +54,8 @@ class FormList{
         this[p]=this.cont.children[x];
       }
     }
-    */
+    this.table = cont.getElementsByClassName(this.dom.parts.list)[0];
+
     this.LOADlist(this.list);
   }
 
@@ -67,13 +70,14 @@ class FormList{
 
   get form(){
     let rlist = [];
-    for(let x=0;x<this.list.children.length;x++){
-      rlist.push(this.GETitem(this.list.children[x]));
+    for(let x=0;x<this.table.children.length;x++){
+      rlist.push(this.GETitem(this.table.children[x]));
     }
     return rlist;
   }
+  
   set form(rlist=[]){
-    this.list.innerHTML='';
+    this.table.innerHTML='';
     for(let x=0;x<rlist.length;x++){
       this.ADDitem(rlist[x]);
     }
@@ -82,7 +86,7 @@ class FormList{
   ADDitem(item={}){
     item=this.rmap(item);
     let row = this.SETrow?this.SETrow(item):SETrowFROMobject(item);
-    if(row){this.list.appendChild(row);}
+    if(row){this.table.appendChild(row);}
   }
   GETitem(row){
     let item = this.GETrow?this.GETrow(row):GETrowTOobject(row);
@@ -90,7 +94,7 @@ class FormList{
   }
 
   LOADlist(list=[]){
-    this.list.innerHTML='';
+    this.table.innerHTML='';
     for(let x=0;x<list.length;x++){
       this.ADDitem(list[x]);
     }
