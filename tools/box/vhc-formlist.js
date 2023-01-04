@@ -22,13 +22,13 @@ class FormList{
   constructor({
     cont=document.createElement('div'),
     list=[],
-
     rmap=(r)=>{return r},
     seleeve=()=>{}
   }){
     this.cont=cont;
     console.log(this.name);
-    if(this.INITcontent){console.log(this.content);this.cont.innerHTML=this.INITcontent();}
+    
+    if(this.INITcontent()){this.cont.innerHTML=this.INITcontent();}
     this.content=this.cont.innerHTML;
 
     this.list = list;
