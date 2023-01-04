@@ -8,9 +8,10 @@ class DrawingPad {
     this.paint = false;
     this.color = color;
 
-    this.canvas.addEventListener('mousedown', this.startPainting);
-    this.canvas.addEventListener('mouseup', this.stopPainting);
-    this.canvas.addEventListener('mousemove', this.sketch);
+    this.canvas.addEventListener('pointerdown', this.startPainting);
+    this.canvas.addEventListener('pointerup', this.stopPainting);
+    this.canvas.addEventListener('pointermove', this.sketch);
+    this.ctx.canvas.style.touchAction = "none"; //Prevents stylus hover from drawing
     window.addEventListener('resize', this.resize);
 
     this.resize(); // Resizes the canvas once the window loads
