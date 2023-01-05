@@ -138,7 +138,7 @@ var FILLselect = (select, options=undefined, emptyoption = false, emptytext = ""
         if (options != undefined) {
             for (let i = 0; i < options.length; i++) {
                 var optionel = document.createElement('option');
-                console.log(options[i])
+                //console.log(options[i])
                 optionel.text = options[i].text;
                 optionel.value = options[i].value;
                 select.add(optionel);
