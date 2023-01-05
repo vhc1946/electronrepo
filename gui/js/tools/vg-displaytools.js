@@ -124,7 +124,7 @@ var GETdatalist = (dlistname)=>{
     emptyoption: specify whether a placeholder blank option will be provided as the default
     emptytext: specify the text, if any, given to the blank option
 */
-var FILLselect = (select, options, emptyoption = false, emptytext = "")=>{
+var FILLselect = (select, options=undefined, emptyoption = false, emptytext = "")=>{
     try{
         //Clear select
         select.innerHTML = '';
@@ -135,13 +135,16 @@ var FILLselect = (select, options, emptyoption = false, emptytext = "")=>{
             emptyopt.text = emptytext;
             select.add(emptyopt);
         }
-        for (let i = 0; i < options.length; i++) {
-            var optionel = document.createElement('option');
-            console.log(options[i])
-            optionel.text = options[i].text;
-            optionel.value = options[i].value;
-            select.add(optionel);
+        if (options != undefined) {
+            for (let i = 0; i < options.length; i++) {
+                var optionel = document.createElement('option');
+                console.log(options[i])
+                optionel.text = options[i].text;
+                optionel.value = options[i].value;
+                select.add(optionel);
+            }
         }
+        
     }
     catch(e){
         console.log(e)
