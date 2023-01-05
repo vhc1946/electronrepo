@@ -14,7 +14,8 @@ console.log(quote);
     group:quote.info.build.systems[sysnum].tiers[optnum].info[newgrp.toLowerCase()+"_group"],
     system:{
       name:quote.info.build.systems[sysnum].name,
-      tier:quote.info.build.systems[sysnum].tiers[optnum].name,
+      tier:quote.info.build.systems[sysnum].tiers[optnum].name + " Comfort",
+      area:quote.info.build.systems[sysnum].areaserve,
       btuheating:quote.info.build.systems[sysnum].btuheating,
       btucooling:quote.info.build.systems[sysnum].btucooling,
       outlocation:quote.info.build.systems[sysnum].outlocation,
@@ -23,6 +24,7 @@ console.log(quote);
     customer:{
       name:quote.customer.name,
       street:quote.street,
+      unit:quote.unit,
       city:quote.city,
       state:quote.state,
       zip:quote.zip,
@@ -203,8 +205,10 @@ var PARSEexcel=(contract)=>{
         group:'',
         /* Sys Info */
         system:{
-          name:datasheet.cell("K28").value(),
+          area:datasheet.cell("K28").value(),
+          tier:datasheet.cell("C15").value(),
           btucooling:datasheet.cell("K30").value(),
+          btuheating:datasheet.cell("K29").value(),
           outlocation:datasheet.cell("AO28").value(),
           inlocation:datasheet.cell("AO29").value(),
         },
@@ -290,19 +294,21 @@ var WRITEexcel=(contract,contractpath,saveAS=false)=>{
 
     /* Customer Info */
     datasheet.cell("K9").value(contract.customer.name);
-    datasheet.cell("K10").value(contract.customer.street);
+    datasheet.cell("K10").value(contract.customer.street + " " + contract.customer.unit);
     datasheet.cell("K11").value(contract.customer.longcity);
     datasheet.cell("K12").value(contract.customer.phone);
     datasheet.cell("K13").value(contract.customer.email);
 
     /* System Info */
-    datasheet.cell("K28").value(contract.system.name);
+    datasheet.cell("C15").value(contract.system.tier);
+    datasheet.cell("K28").value(contract.system.area);
     datasheet.cell("K29").value(contract.system.btuheating);
     datasheet.cell("K30").value(contract.system.btucooling);
     datasheet.cell("AQ28").value(contract.system.outlocation);
     datasheet.cell("AQ29").value(contract.system.inlocation);
 
     /* Financials */
+    datasheet.cell('AP9').value(contract.system.tier + " Sale Price");
     datasheet.cell('AS11').value(contract.finance.instntdscnt);
     datasheet.cell('AS12').value(contract.finance.ameren);
     datasheet.cell('AS13').value(contract.finance.manf);
