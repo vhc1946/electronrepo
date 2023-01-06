@@ -1,5 +1,4 @@
-
-
+//Utility function, could be moved
 function ExcelDateToJSDate(date, time = false) {
     try{
         if (date == undefined || isNaN(date)){

@@ -1,5 +1,6 @@
 /**
  * Documentation needed
+ * Listener in try/catch block does not do anything - might not be necessary
  */
 var ffdom = {
   cont:'vg-float-frame',

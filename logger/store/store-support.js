@@ -1,3 +1,6 @@
+/**
+ * Documentation missing
+ */
 var path = require('path');
 var Datastore = require('nedb');
 

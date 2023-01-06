@@ -1,3 +1,6 @@
+/**
+ * Documentation needed
+ */
 const $=require('jquery');
 var {writePart} = require('../tools/vg-partials.js');
 

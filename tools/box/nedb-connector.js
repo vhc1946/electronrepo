@@ -1,3 +1,6 @@
+/**
+ * Documentation missing
+ */
 var DataStore = require('nedb');
 class NEDBconnect{
   constructor(setup,ensure=null){

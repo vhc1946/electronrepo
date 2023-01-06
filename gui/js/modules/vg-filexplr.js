@@ -1,3 +1,6 @@
+/**
+ * Documentation needed
+ */
 var DrawDirMap=(nmap,elem,filsele)=>{
     elem.classList.add('folder');
     var fold = elem.appendChild(document.createElement('div'))

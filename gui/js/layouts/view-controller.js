@@ -1,3 +1,6 @@
+/**
+ * Documentation needed
+ */
 var {CreateComponent}=require('../tools/vhc-components.js')
 /* FIND parentNode
     Usually used in events to ensure the event belongs to the corrent element

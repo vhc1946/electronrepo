@@ -1,4 +1,7 @@
-
+/**
+ * Documentation needed
+ * Why use this versus regular view-controller?
+ */
 
 
 /* SETUP loose views

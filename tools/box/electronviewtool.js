@@ -1,3 +1,6 @@
+/**
+ * Documentation missing
+ */
 var {app,BrowserWindow,ipcMain} = require('electron');
 //swap view in a created BrowserWindow
 var swapper = (view,fpath,w=0,h=0)=>{

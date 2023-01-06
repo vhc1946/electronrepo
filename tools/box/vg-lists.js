@@ -1,3 +1,6 @@
+/**
+ * Documentation missing
+ */
 class ObjList{
     constructor(list=null){
         this.list=[]; //pool of referals to work with

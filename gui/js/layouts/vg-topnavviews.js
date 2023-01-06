@@ -1,4 +1,6 @@
-
+/**
+ * Documentation needed
+ */
 var $ = require('jquery');
 var tnvdom={
   cont:'vapi-admin-cont', //variable per program (id)

@@ -1,4 +1,7 @@
 // Takes in a canvas element to create an element that can be drawn on
+/**
+ * Identical to webrepo, use webrepo?
+ */
 
 class DrawingPad {
   constructor(cont, color='black'){
