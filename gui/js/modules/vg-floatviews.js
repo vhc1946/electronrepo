@@ -1,3 +1,6 @@
+/**
+ * Documentation needed
+ */
 var ffdom = {
   cont:'vg-float-frame',
   open:'vg-float-frame-open',
@@ -6,6 +9,7 @@ var ffdom = {
   selected:'vg-float-view-selected'
 }
 
+//Removes a frame from view
 var RESETframe=(cont)=>{
   let list = cont.getElementsByClassName(ffdom.selected);
   cont.classList.remove(ffdom.open);
@@ -23,6 +27,7 @@ var SELECTview=(cont,title)=>{
   }
 }
 
+//Doesn't seem to do anything?
 try{
   document.getElementById(ffdom.close).addEventListener('click',(ele)=>{
     //console.log(ele.target.parentNode);

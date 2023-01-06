@@ -1,4 +1,6 @@
-
+/**
+ * Documentation needed - what is this for?
+ */
 
 var oedom = {
   isvar:'edit-var',

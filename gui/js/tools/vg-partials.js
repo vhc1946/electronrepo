@@ -1,4 +1,6 @@
-
+/**
+ * Documentation needed
+ */
 var fs = require('fs'),
     path = require('path');
 
